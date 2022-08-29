@@ -3,10 +3,10 @@ const path = require('path')
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    bundle: path.resolve(__dirname, '..', './src/index.js'),
+    bundle: path.resolve(__dirname, '..', './src/index.ts'),
   },
   resolve: {
-    extensions: ['.js', '.ts', '.json'], //extensions to resolve
+    extensions: ['.ts', '.tsx', '.json', '.js'], //extensions to resolve
     modules: [path.resolve(__dirname, 'src'), 'node_modules'], // to specify external modules
     // fallback: {},
     // alias: {},
@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)$/,
+        test: /\.(ts|js)x$/,
         exclude: /node_modules/,
         use: [
           {
